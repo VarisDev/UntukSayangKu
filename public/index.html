@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teruntuk pacar ku yang cantikk🎂</title>
+  <meta name="theme-color" content="#ffeaf1" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E🎂%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Background animasi -->
+  <div id="bokeh" class="bokeh"></div>
+
+  <main class="stage">
+    <!-- SCREEN 1: Sambutan -->
+    <!-- SCREEN KUNCI: sebelum 29 Okt 2026 -->
+    <section id="screenLock" class="screen">
+      <div class="card">
+        <div class="cake">🎁</div>
+        <h1 class="title">Sabar yaa sayang, belum waktunya 🥰</h1>
+      </div>
+    </section>
+
+    <section id="screen1" class="screen">
+      <div class="card">
+        <div class="cake">🎂</div>
+        <h1 class="title">Haloo sayangg, selamat ulangtahun yaa 🎂🎂</h1>
+        <button class="btn" id="next1">Next 💗</button>
+      </div>
+    </section>
+
+    <!-- SCREEN 2: Form -->
+    <section id="screen2" class="screen">
+      <div class="card">
+        <div class="mini-emoji">🌸</div>
+        <div class="field">
+          <label for="nama">Nama</label>
+          <input type="text" id="nama" placeholder="Tulis namamu di sini..." autocomplete="off" />
+        </div>
+        <div class="field">
+          <label for="tgl">Tanggal lahir</label>
+          <input type="date" id="tgl" />
+        </div>
+        <p class="hint">Pencet bawah ini ya sayang kuu 🥰</p>
+        <button class="btn" id="next2">Next 💗</button>
+      </div>
+    </section>
+
+    <!-- SCREEN 3: Ucapan slide 1 -->
+    <section id="screen3" class="screen">
+      <div class="card card-wide">
+        <h2 class="slide-title">Selamat ulang tahun zila sayaangg 🎂🥳🥳</h2>
+        <div class="letter"><span class="typed"></span><span class="cursor">|</span></div>
+        <p class="tap-hint">tap teks kalau mau langsung muncul semua ✨</p>
+        <button class="btn btn-hidden btn-next" id="next3">Next 💗</button>
+      </div>
+    </section>
+
+    <!-- SCREEN 4: Ucapan slide 2 -->
+    <section id="screen4" class="screen">
+      <div class="card card-wide">
+        <h2 class="slide-title">Curhatan sedikit boleh nggak sihh :v 😁😁</h2>
+        <div class="letter"><span class="typed"></span><span class="cursor">|</span></div>
+        <p class="tap-hint">tap teks kalau mau langsung muncul semua ✨</p>
+        <button class="btn btn-hidden btn-next" id="next4">Next 💗</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Alert pink -->
+  <div class="overlay" id="alertBox">
+    <div class="modal">
+      <div class="modal-emoji">🎀</div>
+      <p id="alertText">Harus di isi dulu yaaa sayang kuuu 🥰, hehehe</p>
+      <button class="btn btn-small" id="alertOk">Oke sayang 💕</button>
+    </div>
+  </div>
+
+  <!-- Popup akhir -->
+  <div class="overlay" id="finalBox">
+    <div class="modal">
+      <div class="modal-emoji">💌</div>
+      <p>Mau ngirim pesan ke aku nggak kak? :v</p>
+      <p class="sign">— Andrax cintamuu</p>
+      <div class="modal-actions">
+        <button class="btn btn-small" id="finalSend">Mau 🥰</button>
+        <button class="btn btn-small btn-ghost" id="finalClose">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <audio id="bgm" src="src/hbd.mp3" loop preload="auto"></audio>
+  <button class="music off" id="music" aria-label="Putar atau jeda musik">🎵</button>
+
+  <div class="test-badge" id="testBadge" hidden>MODE TES</div>
+
+  <div class="dots" id="dots"><i></i><i></i><i></i><i></i></div>
+
+  <script src="mode.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

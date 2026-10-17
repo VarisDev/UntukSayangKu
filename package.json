@@ -1,0 +1,12 @@
+{
+  "name": "ultah-sayang-ku",
+  "version": "1.0.0",
+  "description": "Website ucapan ulang tahun 29-10-2026",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

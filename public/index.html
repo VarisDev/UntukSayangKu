@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Teruntuk pacar ku yang cantikk🎂</title>
   <meta name="theme-color" content="#ffeaf1" />
+  <meta name="robots" content="noindex" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E🎂%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,22 +15,32 @@
 <body>
   <!-- Background animasi -->
   <div id="bokeh" class="bokeh"></div>
+  <canvas id="confetti" class="confetti"></canvas>
 
   <main class="stage">
-    <!-- SCREEN 1: Sambutan -->
-    <!-- SCREEN KUNCI: sebelum 29 Okt 2026 -->
-    <section id="screenLock" class="screen">
-      <div class="card">
-        <div class="cake">🎁</div>
-        <h1 class="title">Sabar yaa sayang, belum waktunya 🥰</h1>
+    <!-- SCREEN 0: Hitung mundur -->
+    <section id="screen0" class="screen active">
+      <div class="card card-count">
+        <div class="cake cake-sm">🎁</div>
+        <h1 class="title title-sm">Sebentar lagi hari spesial kamu sayang 💗</h1>
+        <p class="sub">Kejutannya kebuka otomatis pas<br /><b id="targetLabel">29 Oktober 2026, 00:00 WIB</b></p>
+        <div class="timer" id="timer" role="timer" aria-live="off">
+          <div class="tbox"><span class="tnum" id="tD">00</span><span class="tlab">Hari</span></div>
+          <div class="tbox"><span class="tnum" id="tH">00</span><span class="tlab">Jam</span></div>
+          <div class="tbox"><span class="tnum" id="tM">00</span><span class="tlab">Menit</span></div>
+          <div class="tbox"><span class="tnum" id="tS">00</span><span class="tlab">Detik</span></div>
+        </div>
+        <p class="hint hint-count">Sabar yaaa sayang, jangan diintip duluu 🙈</p>
       </div>
     </section>
 
+    <!-- SCREEN 1: Sambutan -->
     <section id="screen1" class="screen">
       <div class="card">
         <div class="cake">🎂</div>
         <h1 class="title">Haloo sayangg, selamat ulangtahun yaa 🎂🎂</h1>
         <button class="btn" id="next1">Next 💗</button>
+        <div class="dots"><i class="on"></i><i></i><i></i><i></i><i></i></div>
       </div>
     </section>
 
@@ -47,26 +58,41 @@
         </div>
         <p class="hint">Pencet bawah ini ya sayang kuu 🥰</p>
         <button class="btn" id="next2">Next 💗</button>
+        <div class="dots"><i></i><i class="on"></i><i></i><i></i><i></i></div>
       </div>
     </section>
 
-    <!-- SCREEN 3: Ucapan slide 1 -->
+    <!-- SCREEN 3: Ucapan -->
     <section id="screen3" class="screen">
       <div class="card card-wide">
-        <h2 class="slide-title">Selamat ulang tahun zila sayaangg 🎂🥳🥳</h2>
-        <div class="letter"><span class="typed"></span><span class="cursor">|</span></div>
-        <p class="tap-hint">tap teks kalau mau langsung muncul semua ✨</p>
-        <button class="btn btn-hidden btn-next" id="next3">Next 💗</button>
+        <div class="letter-head" id="head3">Selamat ulang tahun zila sayaangg 🎂🥳🥳</div>
+        <div class="photo-stack" id="photoStack" hidden></div>
+        <div class="letter" id="letter3"><span id="typed3"></span><span class="cursor" id="cursor3">|</span></div>
+        <p class="tap-hint" id="hint3">tap teks kalau mau langsung muncul semua ✨</p>
+        <button class="btn btn-hidden" id="next3">Next 💗</button>
+        <div class="dots"><i></i><i></i><i class="on"></i><i></i><i></i></div>
       </div>
     </section>
 
-    <!-- SCREEN 4: Ucapan slide 2 -->
+    <!-- SCREEN 4: Terima kasih & curhat (+ foto) -->
     <section id="screen4" class="screen">
       <div class="card card-wide">
-        <h2 class="slide-title">Curhatan sedikit boleh nggak sihh :v 😁😁</h2>
-        <div class="letter"><span class="typed"></span><span class="cursor">|</span></div>
-        <p class="tap-hint">tap teks kalau mau langsung muncul semua ✨</p>
-        <button class="btn btn-hidden btn-next" id="next4">Next 💗</button>
+        <div class="letter-head">Curhatan sedikit boleh nggak sihh :v 😁😁</div>
+        <div class="letter" id="letter4"><span id="typed4"></span><span class="cursor" id="cursor4">|</span></div>
+        <p class="tap-hint" id="hint4">tap teks kalau mau langsung muncul semua ✨</p>
+        <button class="btn btn-hidden" id="next4">Next 💗</button>
+        <div class="dots"><i></i><i></i><i></i><i class="on"></i><i></i></div>
+      </div>
+    </section>
+
+    <!-- SCREEN 5: Doa -->
+    <section id="screen5" class="screen">
+      <div class="card card-wide">
+        <div class="letter-head">🤲 Doa untuk kamu 🤲</div>
+        <div class="letter" id="letter5"><span id="typed5"></span><span class="cursor" id="cursor5">|</span></div>
+        <p class="tap-hint" id="hint5">tap teks kalau mau langsung muncul semua ✨</p>
+        <button class="btn btn-hidden" id="next5">Next 💗</button>
+        <div class="dots"><i></i><i></i><i></i><i></i><i class="on"></i></div>
       </div>
     </section>
   </main>
@@ -94,11 +120,8 @@
   </div>
 
   <audio id="bgm" src="src/hbd.mp3" loop preload="auto"></audio>
-  <button class="music off" id="music" aria-label="Putar atau jeda musik">🎵</button>
-
+  <button class="music off" id="music" aria-label="Putar atau jeda musik" hidden>🎵</button>
   <div class="test-badge" id="testBadge" hidden>MODE TES</div>
-
-  <div class="dots" id="dots"><i></i><i></i><i></i><i></i></div>
 
   <script src="mode.js"></script>
   <script src="script.js"></script>
